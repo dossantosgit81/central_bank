@@ -7,7 +7,5 @@ create table if not exists bank(
     monthly_free_transfers bigint(3) default 0,
     rf_agency bigint(20) not null,
     status_data_base varchar(8) default 'ACTIVE',
-    foreign key
+    foreign key(rf_agency) references agency(id_agency)
 )engine innoDB default charset=utf8;
-
-alter table bank auto_increment = 001;
