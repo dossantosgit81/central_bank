@@ -4,7 +4,5 @@ create table if not exists customer(
     last_name_customer varchar(30) not null,
     social_security_number_customer varchar(11) unique not null,
     type_customer varchar(4) not null,
-    status_data_base varchar(20) default 'ACTIVE',
-    rf_bank int(3) not null,
-    foreign key(rf_bank) references bank(id_bank)
+    status_data_base varchar(20) default 'ACTIVE'
 ) engine innodb default charset=utf8;
