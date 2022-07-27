@@ -1,5 +1,5 @@
 create table if not exists agency(
-    id_agency int(4) zerofill not null primary key auto_increment ,
+    id_agency int(5) zerofill not null primary key auto_increment,
     name_agency varchar(50) not null,
     neighborhood_agency varchar(50) null,
     road_agency varchar(20) null,
@@ -7,7 +7,7 @@ create table if not exists agency(
     rf_state bigint(20) not null,
     rf_city bigint(20) not null,
     status_data_base varchar(20) default 'ACTIVE',
-    rf_bank bigint(20) zerofill not null,
+    rf_bank int(3) zerofill not null,
     foreign key(rf_state) references state(id_state),
     foreign key(rf_city) references city(id_city),
     foreign key(rf_bank) references bank(id_bank)

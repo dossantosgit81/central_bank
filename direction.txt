@@ -1,0 +1,7 @@
+Disponibilizar um endpoint que lista os clientes
+
+Cadastrar uma nova transação
+
+Cadastrar conta do cliente
+
+Processar transação

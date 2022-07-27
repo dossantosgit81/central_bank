@@ -1,4 +1,4 @@
-INSERT INTO `bank` (`id_bank`, `name_bank`,`acronym_bank`, `doc_fee`, `ted_fee`, `monthly_free_transfers`, `status_data_base`, `thirst_bank`) VALUES (null,'BANCO DA BAHIA','BB' ,9.40, 8.45, 0, 'ACTIVE', null);
+INSERT INTO `bank` (`id_bank`, `name_bank`, `acronym_bank`,`status_data_base`, `thirst_bank`) VALUES (null,'BANCO DA BAHIA','BB', 'ACTIVE', null);
 -- INSERT INTO `bank` (`id_bank`, `name_bank`,`acronym_bank`, `doc_fee`, `ted_fee`, `monthly_free_transfers`, `status_data_base`,) VALUES (null,'BANCO DO PARANÁ','BP' ,9.40, 8.45, 0, 'ACTIVE');
 -- INSERT INTO `bank` (`id_bank`, `name_bank`,`acronym_bank`, `doc_fee`, `ted_fee`, `monthly_free_transfers`, `status_data_base`,) VALUES (null,'BANCO DO DISTRITO FEDERAL','BDF' , 7.40, 9.75, 0, 'ACTIVE');
 -- INSERT INTO `bank` (`id_bank`, `name_bank`,`acronym_bank`, `doc_fee`, `ted_fee`, `monthly_free_transfers`, `status_data_base`,) VALUES (null,'BANCO DE SERGIPE','BS' ,7.40, 9.75, 0,'ACTIVE');
