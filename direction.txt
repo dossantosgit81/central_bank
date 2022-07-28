@@ -4,4 +4,14 @@ Cadastrar uma nova transação
 
 Cadastrar conta do cliente
 
+Autenticação e premissões
+
 Processar transação
+
+1.Lista os clientes
+2.Realiza um post para o cliente que ele almeja realizar transferência
+3.Salva transação
+4.Processo de transação bancaria
+
+
+Cara, só faça seed após o banco estiver maduro. Que trampo
