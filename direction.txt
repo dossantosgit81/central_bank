@@ -15,3 +15,5 @@ Processar transação
 
 
 Cara, só faça seed após o banco estiver maduro. Que trampo
+
+CRIAR VIEW DE HISTÓRICO DE TRANSAÇÕES BANCARIAS DE UM CLIENTE DO BANCO DESDE QUE AQUELE QUE ESTEJA BUSCANDO SEJA O SEU BANCO.
