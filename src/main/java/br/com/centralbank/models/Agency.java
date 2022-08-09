@@ -1,9 +1,21 @@
 package br.com.centralbank.models;
 
 
-import lombok.*;
+import br.com.centralbank.models.enums.StatusDataBase;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 @Getter
@@ -16,7 +28,7 @@ public class Agency {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_agency")
-    private Long id_agency;
+    private Long idAgency;
 
     @Column(name = "name_agency")
     private String nameAgency;
@@ -28,7 +40,7 @@ public class Agency {
     private String roadAgency;
 
     @Column(name = "status_data_base")
-    private String statusDatabase;
+    private StatusDataBase statusDatabase;
 
     @Column(name = "house_number_agency")
     private String houseNumberAgency;

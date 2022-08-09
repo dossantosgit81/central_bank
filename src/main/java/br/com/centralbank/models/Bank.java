@@ -1,5 +1,6 @@
 package br.com.centralbank.models;
 
+import br.com.centralbank.models.enums.StatusDataBase;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,7 +21,7 @@ public class Bank {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_bank")
-    private Long id_bank;
+    private Long idBank;
 
     @Column(name = "name_bank")
     private String nameBank;
@@ -29,7 +30,7 @@ public class Bank {
     private String acronymBank;
 
     @Column(name = "status_data_base")
-    private String statusDtaBase;
+    private StatusDataBase statusDtaBase;
 
     @OneToOne
     @JoinColumn(name = "thirst_bank")

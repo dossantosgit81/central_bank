@@ -9,7 +9,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.apache.logging.log4j.status.StatusData;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 @Getter
@@ -19,17 +25,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Customer {
 
-    //create table if not exists customer(
-    //    id_customer bigint(20) not null primary key auto_increment,
-    //    first_name_customer varchar(20) not null,
-    //    last_name_customer varchar(30) not null,
-    //    social_security_number_customer varchar(11) unique not null,
-    //    type_customer varchar(4) not null,
-    //    status_data_base varchar(20) default 'ACTIVE'
-    //) engine innodb default charset=utf8;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_customer")
     private Long idCustomer;
 
     @Column(name = "first_name_customer")
@@ -45,6 +43,7 @@ public class Customer {
     @Column(name = "type_customer")
     private CustomerType customerType;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status_data_base")
     private StatusDataBase stat;
 

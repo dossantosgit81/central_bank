@@ -4,6 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 public enum CustomerType {
-    CPF,
-    CNPJ
+    LEGAL_CUSTOMER,
+    PHYSICAL_CUSTOMER
 }
