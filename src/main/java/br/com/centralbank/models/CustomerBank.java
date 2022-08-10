@@ -6,10 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 
 @Entity
 @IdClass(CustomerBankId.class)
@@ -18,6 +15,7 @@ import javax.persistence.IdClass;
 @Getter
 @Setter
 @Builder
+@Table(name = "customer_bank")
 public class CustomerBank {
 
     @Id

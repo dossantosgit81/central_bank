@@ -1,8 +1,25 @@
 package br.com.centralbank.models;
 
-import lombok.*;
+import br.com.centralbank.models.enums.StatusDataBase;
+import br.com.centralbank.models.enums.TypeAccount;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Getter
@@ -11,18 +28,27 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Account {
-//    create table if not exists account(
-//            id_account int(9) zerofill not null primary key auto_increment,
-//    type_account varchar(15) not null,
-//    balance_account decimal(10, 2) default 0,
-//    rf_customer bigint(20) not null,
-//    status_data_base varchar(20) default 'ACTIVE',
-//    foreign key(rf_customer) references customer(id_customer)
-//            );
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_account")
     private Long idAccount;
 
+    @Column(name = "type_account")
+    @Enumerated(EnumType.STRING)
+    private TypeAccount typeAccount;
+
+    @Column(name = "balance_account")
+    private BigDecimal balanceAccount = BigDecimal.ZERO;
+
+    @ManyToOne
+    @JoinColumn(name = "rf_customer")
+    private Customer customer;
+
+    @Column(name = "status_data_base")
+    @Enumerated(EnumType.STRING)
+    private StatusDataBase statusDataBase;
+
+    @OneToMany(mappedBy = "account")
+    private List<Transaction> transactions;
 }

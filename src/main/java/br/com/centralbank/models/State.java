@@ -22,7 +22,7 @@ public class State {
 
     private Long idState;
 
-    private String name_state;
+    private String nameState;
 
     private String acronymState;
 

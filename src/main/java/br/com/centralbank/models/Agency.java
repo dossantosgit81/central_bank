@@ -15,7 +15,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.util.List;
 
 @Entity
 @Getter
@@ -55,5 +57,8 @@ public class Agency {
     @ManyToOne
     @JoinColumn(name = "rf_city")
     private City city;
+
+    @OneToMany(mappedBy = "agency")
+    private List<Transaction> transactions;
 
 }
