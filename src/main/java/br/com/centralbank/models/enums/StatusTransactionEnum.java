@@ -1,6 +1,6 @@
 package br.com.centralbank.models.enums;
 
-public enum StatusTransaction {
+public enum StatusTransactionEnum {
 
     AWAITING_PROCESSING,
     PROCESSING,

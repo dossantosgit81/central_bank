@@ -1,6 +1,7 @@
 package br.com.centralbank.models;
 
-import br.com.centralbank.models.enums.StatusTransaction;
+import br.com.centralbank.models.enums.ErrorResonEnum;
+import br.com.centralbank.models.enums.StatusTransactionEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -54,15 +55,11 @@ public class Transaction {
 
     @Column(name = "status_transaction")
     @Enumerated(EnumType.STRING)
-    private StatusTransaction statusTransaction;
+    private StatusTransactionEnum statusTransaction;
 
-    /*
-    * Código
-    * Status
-    *   1
-    *   Refused
-    *
-    *
-    * */
+    @Column(name = "error_reson")
+    @Enumerated(EnumType.STRING)
+    private ErrorResonEnum errorResonEnum;
+
 
 }

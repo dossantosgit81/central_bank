@@ -1,7 +1,7 @@
 package br.com.centralbank.models;
 
-import br.com.centralbank.models.enums.CustomerType;
-import br.com.centralbank.models.enums.StatusDataBase;
+import br.com.centralbank.models.enums.CustomerTypeEnum;
+import br.com.centralbank.models.enums.StatusDataBaseEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -42,11 +42,11 @@ public class Customer {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type_customer")
-    private CustomerType customerType;
+    private CustomerTypeEnum customerType;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status_data_base")
-    private StatusDataBase statusDataBase;
+    private StatusDataBaseEnum statusDataBase;
 
     @OneToMany(mappedBy = "customer")
     private List<Account> accounts;

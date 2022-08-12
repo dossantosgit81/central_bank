@@ -1,6 +1,6 @@
 package br.com.centralbank.models;
 
-import br.com.centralbank.models.enums.StatusDataBase;
+import br.com.centralbank.models.enums.StatusDataBaseEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -37,7 +37,7 @@ public class Bank {
     private String acronymBank;
 
     @Column(name = "status_data_base")
-    private StatusDataBase statusDtaBase;
+    private StatusDataBaseEnum statusDtaBase;
 
     @OneToOne
     @JoinColumn(name = "thirst_bank")

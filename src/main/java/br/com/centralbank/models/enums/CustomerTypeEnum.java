@@ -5,9 +5,9 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum TypeAccount {
-    CONTA_CORRENTE("CONTA CORRENTE"),
-    CONTA_POUPANCA("CONTA POUPANÇA");
+public enum CustomerTypeEnum {
+    LEGAL_CUSTOMER("PESSOA JURÍDICA"),
+    PHYSICAL_CUSTOMER("PESSOA FÍSICA");
 
     private String description;
 }

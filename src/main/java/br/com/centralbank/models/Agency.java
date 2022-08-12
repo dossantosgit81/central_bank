@@ -1,7 +1,7 @@
 package br.com.centralbank.models;
 
 
-import br.com.centralbank.models.enums.StatusDataBase;
+import br.com.centralbank.models.enums.StatusDataBaseEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -42,7 +42,7 @@ public class Agency {
     private String roadAgency;
 
     @Column(name = "status_data_base")
-    private StatusDataBase statusDatabase;
+    private StatusDataBaseEnum statusDatabase;
 
     @Column(name = "house_number_agency")
     private String houseNumberAgency;

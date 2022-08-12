@@ -1,6 +1,6 @@
 package br.com.centralbank.models.enums;
 
-public enum StatusDataBase {
+public enum StatusDataBaseEnum {
     ACTIVE,
     EXCLUDE
 

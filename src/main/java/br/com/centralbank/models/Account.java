@@ -1,7 +1,7 @@
 package br.com.centralbank.models;
 
-import br.com.centralbank.models.enums.StatusDataBase;
-import br.com.centralbank.models.enums.TypeAccount;
+import br.com.centralbank.models.enums.StatusDataBaseEnum;
+import br.com.centralbank.models.enums.TypeAccountEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -36,7 +36,7 @@ public class Account {
 
     @Column(name = "type_account")
     @Enumerated(EnumType.STRING)
-    private TypeAccount typeAccount;
+    private TypeAccountEnum typeAccount;
 
     @Column(name = "balance_account")
     private BigDecimal balanceAccount = BigDecimal.ZERO;
@@ -47,7 +47,7 @@ public class Account {
 
     @Column(name = "status_data_base")
     @Enumerated(EnumType.STRING)
-    private StatusDataBase statusDataBase;
+    private StatusDataBaseEnum statusDataBase;
 
     @OneToMany(mappedBy = "account")
     private List<Transaction> transactions;

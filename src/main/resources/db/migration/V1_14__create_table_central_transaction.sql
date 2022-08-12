@@ -9,7 +9,7 @@ create table if not exists central_transaction(
     foreign key(rf_agency) references agency(id_agency),
     foreign key(rf_account) references account(id_account),
     status_transaction varchar(50) not null,
-    error_reason varchar(50) null,
+    error_reason varchar(50) null
 )engine InnoDB default charset=utf8;
 
 --Criar enum de erros para popular error_reson
