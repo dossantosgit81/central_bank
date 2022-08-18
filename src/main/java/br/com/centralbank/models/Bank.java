@@ -43,10 +43,10 @@ public class Bank {
     @JoinColumn(name = "thirst_bank")
     private Agency thirst;
 
-    @OneToMany(mappedBy = "thirstBank")
+    @OneToMany(mappedBy = "bankOwner")
     private List<Agency> agencies;
 
-    @OneToMany(mappedBy = "bank")
+    @OneToMany(mappedBy = "institution")
     private List<Transaction> transactions;
 
 }
