@@ -1,0 +1,52 @@
+Criar um gatilho para visualizar transações disponiveis para processamento
+
+
+	Regras de negócio central bank
+			-Realizar transferencia bancaria	
+				1.Verificar permissões do banco X
+		
+					*.Banco X pode acessar o recurso
+							*.Conta propietaria do recurso finaceiro existe
+								*.Verificar se conta propietaria não está fazendo uma operação de adição de recursos na sua própria conta do banco X
+							
+									*.Conta beneficiaria existe
+										*Saldo conta propietaria >= valor que ela quer enviar
+											*.TED
+												*.Verificar se a transferência foi feita antes das 17h o valor cai na conta do beneficiário poucos minutos após a autorização.
+
+												*.Verificar se o agendamento foi feito depois das 17h. Caso tenha sido, o valor só aparecerá na conta do beneficiado no dia seguinte.
+
+											*.DOC
+
+												*.Verificar se o valor enviado na transferencia é >= 0 e <= 4.999,99
+
+													*.Para transações feitas até as 21h59 o valor transferido só é efetivado no próximpo dia útil 
+
+													*.Depois desse horário, o dinheiro só vai cair na conta do beneficiário no segundo dia útil.
+														EX: DOC for programado às 23h de segunda-feira, ele só vai cair na conta da pessoa na quarta. Isso se nenhum desses dias for feriado
+
+												#.Saldo fora do range
+										
+										#.Saldo conta propietaria <= ao valor que ela quer enviar
+									
+									#.Conta beneficiaria não existe	
+
+								*.Conta propietaria adicionando recursos a ela mesma						
+								
+							#.Conta não existe	
+						
+
+					#.Banco X não pode acessar o recurso
+
+
+	Verificações padrão para todos os controllers
+		*.Verificar se o id pertence de fato aquele usuário, ou ele está atacando
+		*.É preciso ficar de olho na confirmação, porque o prazo só começa a valer depois de confirmado o agendamento.
+		*.Verificar se o banco que fez solicitação de transação, é ele mesmo
+		*Discutir modelagem de tarifa Banco e de transação***************.
+
+    UM POSSIVEL GERADOR DE INDICADORES
+        *CRIAR VIEW DE HISTÓRICO DE TRANSAÇÕES BANCARIAS DE UM CLIENTE DO BANCO DESDE QUE AQUELE QUE ESTEJA BUSCANDO SEJA O SEU BANCO.
+        *PROCESSAR TRANSAÇÃO = THREADS, VAMOS ESTUDAR, E VER QUAIS SÃO SEUS DEFEITOS E OS SEUS BENFICIOS COM SPRING. UMA API PARA PROCESSAR TRANSAÇÕES, É COMPLEXISDADE DEMAIS PARA ESSE EXMPLO.
+         CRIAR DADOS DE NEGÓCIO. COMO QUANTIDADE DE BANCOS POR REGIÃO, POR ESTADO E CIDADE. QUANTIDADE DE BANCOS CRIADOS POR ANO, POR MÊS. BANCOS QUE DEIXARAM DE EXISTIR,
+        PRA A GENTE TER UM MOTIVO PRA ESTUDAR PYTHON. ISSO SERÁ BACANA PARA BRINCARMOS COM AUTENTICAÇÃO E QUANDO FORMOS IMPLEMENTAR UMA FINTECH DE VERDADE.
