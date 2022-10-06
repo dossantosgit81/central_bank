@@ -44,8 +44,12 @@ public class Transaction {
     private Agency agency;
 
     @ManyToOne
-    @JoinColumn(name = "rf_account")
-    private Account account;
+    @JoinColumn(name = "rf_account_owner")
+    private Account accountOwner;
+
+    @ManyToOne
+    @JoinColumn(name = "rf_account_recipient")
+    private Account accountRecipient;
 
     @Column(name = "amount_sent_balance")
     private BigDecimal amountSentBalance;

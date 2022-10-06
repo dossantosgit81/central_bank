@@ -49,6 +49,4 @@ public class Account {
     @Enumerated(EnumType.STRING)
     private StatusDataBaseEnum statusDataBase;
 
-    @OneToMany(mappedBy = "account")
-    private List<Transaction> transactions;
 }

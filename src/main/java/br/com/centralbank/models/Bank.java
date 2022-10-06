@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -42,6 +43,9 @@ public class Bank {
     @OneToOne
     @JoinColumn(name = "thirst_bank")
     private Agency thirst;
+
+    @Column(name = "bank_fee_amount")
+    private BigDecimal bankValueFee;
 
     @OneToMany(mappedBy = "bankOwner")
     private List<Agency> agencies;
