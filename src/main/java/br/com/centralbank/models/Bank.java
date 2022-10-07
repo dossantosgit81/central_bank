@@ -50,7 +50,4 @@ public class Bank {
     @OneToMany(mappedBy = "bankOwner")
     private List<Agency> agencies;
 
-    @OneToMany(mappedBy = "institution")
-    private List<Transaction> transactions;
-
 }

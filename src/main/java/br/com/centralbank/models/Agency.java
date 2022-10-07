@@ -58,7 +58,4 @@ public class Agency {
     @JoinColumn(name = "rf_city")
     private City city;
 
-    @OneToMany(mappedBy = "agency")
-    private List<Transaction> transactions;
-
 }

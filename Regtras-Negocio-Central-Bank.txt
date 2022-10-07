@@ -10,7 +10,7 @@ Criar um gatilho para visualizar transações disponiveis para processamento
 								*.Verificar se conta propietaria não está fazendo uma operação de adição de recursos na sua própria conta do banco X
 							
 									*.Conta beneficiaria existe
-										*Saldo conta propietaria >= valor que ela quer enviar
+										*Saldo conta propietaria >= valor que ela quer enviar + valor da transação
 											*.TED
 												*.Verificar se a transferência foi feita antes das 17h o valor cai na conta do beneficiário poucos minutos após a autorização.
 
