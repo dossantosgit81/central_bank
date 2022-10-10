@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 @Setter
 @SuperBuilder(toBuilder = true)
 @Table(name = "transaction_transfer")
-public class TransactionTransfer extends Transaction{
+public class Transfer extends Transaction{
 
     @ManyToOne
     @JoinColumn(name = "rf_bank_owner")
